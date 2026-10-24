@@ -1,0 +1,31 @@
+{
+  "url": "https://scrapeme.live/shop",
+  "extracted_text": "The requested URL (https://scrapeme.live/shop) is consistently unreachable. Multiple attempts using different approaches (direct navigation, base URL, reconfiguring the browser, waiting) all resulted in connection errors (ERR_TIMED_OUT and ERR_TUNNEL_CONNECTION_FAILED). While search results confirm that scrapeme.live exists as a WordPress/WooCommerce demo site, the page is currently unavailable from the current connection, making it impossible to extract the requested information about fees, shipping charges, countdown timers, or limited stock messages.",
+  "analysis": {
+    "hidden_fees": {
+      "detector": "hidden_fees",
+      "possible_hidden_fees_found": false,
+      "findings": []
+    },
+    "fake_timer": {
+      "detector": "fake_timer",
+      "possible_fake_timer_found": true,
+      "findings": [
+        "countdown"
+      ]
+    },
+    "false_scarcity": {
+      "detector": "false_scarcity",
+      "possible_false_scarcity_found": true,
+      "findings": [
+        "limited stock"
+      ]
+    },
+    "summary": {
+      "detectors_triggered": 2,
+      "total_detectors": 3,
+      "risk_score": 67,
+      "risk_level": "Medium"
+    }
+  }
+}

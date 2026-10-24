@@ -1,0 +1,236 @@
+[
+  {
+    "type": "STARTED",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "timestamp": "2026-10-24T13:05:06.423Z"
+  },
+  {
+    "type": "STREAMING_URL",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "streaming_url": "https://ip-54-241-42-93.tetra-data.production.tinyfish.io/tf-0708554a-4a24-41c6-85a2-bf665178d019/stream/0",
+    "timestamp": "2026-10-24T13:05:08.187Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Visit the shop page to extract product information",
+    "timestamp": "2026-10-24T13:05:09.376Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:05:24.383Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:05:39.386Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Reload the page after timeout error",
+    "timestamp": "2026-10-24T13:05:41.893Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:05:56.902Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:06:11.901Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:06:26.902Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Retry visiting the shop page",
+    "timestamp": "2026-10-24T13:06:41.246Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:06:56.256Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:07:11.270Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Try visiting the main site first",
+    "timestamp": "2026-10-24T13:07:14.506Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:07:29.526Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T13:07:44.527Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Reconfigure browser to access scrapeme.shop",
+    "timestamp": "2026-10-24T13:07:45.093Z"
+  },
+  {
+    "type": "STREAMING_URL",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "streaming_url": "https://ip-54-241-42-93.tetra-data.production.tinyfish.io/tf-29d10430-6e43-4dd6-9029-2b8a75e019a8/stream/0",
+    "timestamp": "2026-10-24T13:07:46.877Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Visit the shop page after browser reconfiguration",
+    "timestamp": "2026-10-24T13:07:48.602Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Wait before retrying the URL",
+    "timestamp": "2026-10-24T13:08:01.188Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Retry visiting shop page after wait",
+    "timestamp": "2026-10-24T13:08:12.028Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Try base URL",
+    "timestamp": "2026-10-24T13:08:24.619Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Find scrapeme.live alternatives or working mirrors",
+    "tinyfish_api": "search",
+    "timestamp": "2026-10-24T13:08:36.202Z"
+  },
+  {
+    "type": "TF_API_RESULT",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "tinyfish_api": "search",
+    "result": [
+      {
+        "position": 1,
+        "site_name": "woocommerce.com",
+        "snippet": "Real WooCommerce stores from real WooCommerce customers. See what you can build with the world's most flexible ecommerce platform.",
+        "title": "WooCommerce Site Examples",
+        "url": "https://woocommerce.com/showcase/"
+      },
+      {
+        "position": 2,
+        "site_name": "scrapeme.live",
+        "snippet": "ScrapeMe Just another WordPress site. Showing 753â755 of 755 resultsSorted. Built with Storefront & WooCommerce.",
+        "title": "Shop â Page 48",
+        "url": "https://scrapeme.live/shop/page/48/?orderby=date"
+      },
+      {
+        "position": 3,
+        "site_name": "wpstream.net",
+        "snippet": "The free Hello WpStream theme includes a one-click demo for live shopping. It works with Elementor and WooCommerce.",
+        "title": "Live Shopping Platform: Formats, Types and Costs",
+        "url": "https://wpstream.net/live-shopping/"
+      },
+      {
+        "position": 4,
+        "site_name": "scrapeme.live",
+        "snippet": "Just another WordPress site. Showing 1â16 of 755 resultsSorted. Blacephalon Â£149.00. Built with Storefront & WooCommerce.",
+        "title": "Shop",
+        "url": "https://scrapeme.live/shop/?orderby=date"
+      },
+      {
+        "position": 5,
+        "site_name": "woocommerce.com",
+        "snippet": "WooCommerce is the open-source ecommerce platform that helps merchants and developers build successful businesses for the long term.",
+        "title": "WooCommerce",
+        "url": "https://woocommerce.com/"
+      },
+      {
+        "position": 6,
+        "site_name": "wpdemo.net",
+        "snippet": "This is a live WooCommerce demo that you can test the public and the admin site. Our platform will generate random username and password and will ...",
+        "title": "WooCommerce Demo - WPDemo.net",
+        "url": "https://wpdemo.net/demos/woocommerce-demo"
+      },
+      {
+        "date": "9 months ago",
+        "position": 7,
+        "site_name": "www.youtube.com",
+        "snippet": "This wordpress tutorial guides you through creating an ecommerce website from scratch, even without coding experience. We'll show you how to ...",
+        "title": "WordPress Live Shopping Tutorial: From Zero to Profitable",
+        "url": "https://www.youtube.com/watch?v=t9elGtWjKUM"
+      },
+      {
+        "position": 8,
+        "site_name": "scrapeme.live",
+        "snippet": "ScrapeMe Just another WordPress site. ScrapeMe 2026 Built with Storefront & WooCommerce.",
+        "title": "Shop â Page 11",
+        "url": "https://scrapeme.live/shop/page/11/?orderby=date"
+      },
+      {
+        "date": "Oct 10, 2026",
+        "position": 9,
+        "site_name": "rola-ip.co",
+        "snippet": "Scrape WooCommerce products with Python using the Store API or permitted HTML. Handle prices, pagination, CSV export, and Rola IP proxy ...",
+        "title": "How to Scrape WooCommerce Products with Python",
+        "url": "https://rola-ip.co/blog/scrape-woocommerce-products/"
+      },
+      {
+        "date": "Sep 14, 2026",
+        "position": 10,
+        "site_name": "www.premiumpress.com",
+        "snippet": "SureCart is a standalone ecommerce plugin that does not need WooCommerce. It takes a cloud approach, with the checkout and order engine hosted ...",
+        "title": "WordPress Shop Without WooCommerce: SureCart, Easy ...",
+        "url": "https://www.premiumpress.com/blog/wordpress-shop-without-woocommerce/"
+      }
+    ],
+    "timestamp": "2026-10-24T13:08:37.994Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Retry visiting the shop page",
+    "timestamp": "2026-10-24T13:08:40.695Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Check page content after successful visit",
+    "timestamp": "2026-10-24T13:08:49.510Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Retry visiting the shop page",
+    "timestamp": "2026-10-24T13:08:53.347Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Visit shop page with query parameter from search results",
+    "timestamp": "2026-10-24T13:08:59.067Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "purpose": "Report that the site is unreachable",
+    "timestamp": "2026-10-24T13:09:08.238Z"
+  },
+  {
+    "type": "COMPLETE",
+    "run_id": "34fae076-5562-4ad9-8112-b88c7fd71a8d",
+    "status": "COMPLETED",
+    "timestamp": "2026-10-24T13:09:11.645Z",
+    "result": {
+      "result": "The requested URL (https://scrapeme.live/shop) is consistently unreachable. Multiple attempts using different approaches (direct navigation, base URL, reconfiguring the browser, waiting) all resulted in connection errors (ERR_TIMED_OUT and ERR_TUNNEL_CONNECTION_FAILED). While search results confirm that scrapeme.live exists as a WordPress/WooCommerce demo site, the page is currently unavailable from the current connection, making it impossible to extract the requested information about fees, shipping charges, countdown timers, or limited stock messages."
+    }
+  }
+]
