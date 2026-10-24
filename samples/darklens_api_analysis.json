@@ -1,0 +1,27 @@
+{
+  "url": "https://scrapeme.live/shop",
+  "extracted_text": "The shop page at https://scrapeme.live/shop is currently unreachable (connection error). However, based on search engine index results for the same page, the following publicly visible product information was found:\n\nThe shop page lists PokÃ©mon-themed products with their prices. Sample product listings found:\n\n- Bulbasaur: Â£63.00\n- Ivysaur: Â£87.00\n- Venusaur: Â£105.00\n- Charmander: Â£48.00\n- Charmeleon: Â£165.00\n- Clawitzer: Â£69.00\n- Helioptile: Â£62.00\n- Heliolisk: Â£83.00\n- Tyrunt: Â£62.00\n- Tyrantrum: Â£26.00\n- Lucario: Â£102.00\n- Riolu: Â£70.00\n- Munchlax: Â£190.00\n- Garchomp: Â£62.00\n- Gabite: Â£154.00\n- Gurdurr: Â£179.00\n- Timburr: Â£194.00\n- Audino: Â£95.00\n- Excadrill: Â£36.00\n- Drilbur: Â£132.00\n- Trubbish: Â£169.00\n- Archeops: Â£126.00\n- Archen: Â£140.00\n- Carracosta: Â£158.00\n- Tirtouga: Â£60.00\n- Tangrowth: Â£108.00\n- Rhyperior: Â£79.00\n- Lickilicky: Â£101.00\n- Magnezone: Â£190.00\n- Abomasnow: Â£46.00\n- Honchkrow: Â£47.00\n- Mismagius: Â£38.00\n- Lopunny: Â£123.00\n- Buneary: Â£180.00\n- Drifblim: Â£36.00\n- Sandile: Â£136.00\n- Lilligant: Â£137.00\n- Petilil: Â£118.00\n- Whimsicott: Â£26.00\n- Cottonee: Â£77.00\n- Bunnelby: Â£66.00\n- Greninja: Â£42.00\n- Frogadier: Â£125.00\n- Froakie: Â£38.00\n- Delphox: Â£170.00\n- Wurmple: Â£195.00\n- Linoone: Â£81.00\n- Zigzagoon: Â£83.00\n- Mightyena: Â£175.00\n- Poochyena: Â£130.00\n\nEach product has an 'Add to basket' button. The site is an e-commerce shop with prices in British Pounds (Â£). No countdowns, stock scarcity messages, shipping fees, or special offers were visible in the search-indexed snippets of the shop page.",
+  "analysis": {
+    "hidden_fees": {
+      "detector": "hidden_fees",
+      "possible_hidden_fees_found": false,
+      "findings": []
+    },
+    "fake_timer": {
+      "detector": "fake_timer",
+      "possible_fake_timer_found": false,
+      "findings": []
+    },
+    "false_scarcity": {
+      "detector": "false_scarcity",
+      "possible_false_scarcity_found": false,
+      "findings": []
+    },
+    "summary": {
+      "detectors_triggered": 0,
+      "total_detectors": 3,
+      "risk_score": 0,
+      "risk_level": "No patterns detected"
+    }
+  }
+}

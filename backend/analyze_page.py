@@ -1,10 +1,9 @@
 
 import json
 
-from detectors.hidden_fees import detect_hidden_fees
-from detectors.fake_timer import detect_fake_timer
-from detectors.false_scarcity import detect_false_scarcity
-
+from .detectors.hidden_fees import detect_hidden_fees
+from .detectors.fake_timer import detect_fake_timer
+from .detectors.false_scarcity import detect_false_scarcity
 
 def analyze_page(text):
     fee_result = detect_hidden_fees(text)

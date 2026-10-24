@@ -6,7 +6,7 @@ from pathlib import Path
 import requests
 from dotenv import load_dotenv
 
-from analyze_page import analyze_page
+from backend.analyze_page import analyze_page
 
 
 # Load the API key from backend/.env

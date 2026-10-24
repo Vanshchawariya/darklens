@@ -1,6 +1,6 @@
 {
-  "url": "https://scrapeme.live/shop",
-  "extracted_text": "The requested URL (https://scrapeme.live/shop) is consistently unreachable. Multiple attempts using different approaches (direct navigation, base URL, reconfiguring the browser, waiting) all resulted in connection errors (ERR_TIMED_OUT and ERR_TUNNEL_CONNECTION_FAILED). While search results confirm that scrapeme.live exists as a WordPress/WooCommerce demo site, the page is currently unavailable from the current connection, making it impossible to extract the requested information about fees, shipping charges, countdown timers, or limited stock messages.",
+  "url": "https://www.google.com",
+  "extracted_text": "Navigation: About, Store, Gmail, Images, Google apps, Sign in. Search area: Add files and tools, Search, Search by voice, Search by image, AI Mode, Create images, Ask about files, Brainstorm, I'm Feeling Lucky. Promotional banner: It's Drug Take Back Day: Find locations to safely dispose of unneeded medication. Footer: Advertising, Business, How Search works, Build, create, and do more with AI tools from Google, Privacy, Terms, Settings.",
   "analysis": {
     "hidden_fees": {
       "detector": "hidden_fees",
@@ -9,23 +9,19 @@
     },
     "fake_timer": {
       "detector": "fake_timer",
-      "possible_fake_timer_found": true,
-      "findings": [
-        "countdown"
-      ]
+      "possible_fake_timer_found": false,
+      "findings": []
     },
     "false_scarcity": {
       "detector": "false_scarcity",
-      "possible_false_scarcity_found": true,
-      "findings": [
-        "limited stock"
-      ]
+      "possible_false_scarcity_found": false,
+      "findings": []
     },
     "summary": {
-      "detectors_triggered": 2,
+      "detectors_triggered": 0,
       "total_detectors": 3,
-      "risk_score": 67,
-      "risk_level": "Medium"
+      "risk_score": 0,
+      "risk_level": "No patterns detected"
     }
   }
 }
