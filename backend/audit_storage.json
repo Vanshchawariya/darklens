@@ -1,0 +1,19 @@
+[
+    {
+        "audit_id": "998797f9-4cb4-40c5-af28-602f9472a383",
+        "url": "https://shop-a.example",
+        "site": "shop-a.example",
+        "status": "completed",
+        "findings": [
+            {
+                "pattern": "hidden_fees",
+                "legal_category": "Drip pricing",
+                "severity": 8,
+                "explanation": "Additional charges may be disclosed late in the purchase process.",
+                "evidence_text": "Extra fee appears at checkout",
+                "detected": true
+            }
+        ],
+        "total_score": 8
+    }
+]
