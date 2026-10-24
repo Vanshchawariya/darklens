@@ -15,5 +15,187 @@
             }
         ],
         "total_score": 8
+    },
+    {
+        "audit_id": "7c48b905-5048-4680-a42a-9542d70783e6",
+        "url": "https://example.com/product",
+        "site": "example.com",
+        "status": "completed",
+        "findings": [
+            {
+                "pattern": "hidden_fees",
+                "legal_category": "Drip pricing",
+                "severity": 8,
+                "explanation": "Additional charges may be disclosed late in the purchase process.",
+                "evidence_text": "Shipping fee: Rs. 50",
+                "detected": true
+            },
+            {
+                "pattern": "fake_timer",
+                "legal_category": "False urgency",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            },
+            {
+                "pattern": "false_scarcity",
+                "legal_category": "False urgency",
+                "severity": 5,
+                "explanation": "The stock or demand message may pressure users into making a quick decision.",
+                "evidence_text": "Only 2 items left",
+                "detected": true
+            }
+        ],
+        "total_score": 13
+    },
+    {
+        "audit_id": "7f7a338a-1c9c-40b5-a6c9-8728a26ff34a",
+        "url": "https://example.com/product",
+        "site": "example.com",
+        "status": "completed",
+        "findings": [
+            {
+                "pattern": "hidden_fees",
+                "legal_category": "Drip pricing",
+                "severity": 8,
+                "explanation": "Additional charges may be disclosed late in the purchase process.",
+                "evidence_text": "Shipping fee: Rs. 50",
+                "detected": true
+            },
+            {
+                "pattern": "fake_timer",
+                "legal_category": "False urgency",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            },
+            {
+                "pattern": "false_scarcity",
+                "legal_category": "False urgency",
+                "severity": 5,
+                "explanation": "The stock or demand message may pressure users into making a quick decision.",
+                "evidence_text": "Only 2 items left",
+                "detected": true
+            }
+        ],
+        "total_score": 13
+    },
+    {
+        "audit_id": "a6bcd4fe-2f57-4ea0-8598-795091341ff4",
+        "url": "https://scrapeme.live/shop",
+        "site": "scrapeme.live",
+        "status": "completed",
+        "findings": [
+            {
+                "pattern": "hidden_fees",
+                "legal_category": "Drip pricing",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            },
+            {
+                "pattern": "fake_timer",
+                "legal_category": "False urgency",
+                "severity": 6,
+                "explanation": "The countdown may create false urgency by pressuring users to act quickly.",
+                "evidence_text": "countdown",
+                "detected": true
+            },
+            {
+                "pattern": "false_scarcity",
+                "legal_category": "False urgency",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            }
+        ],
+        "total_score": 6,
+        "extracted_text": "The scrapeme.live shop page is a WooCommerce-based store featuring PokÃ©mon products. Here is what is publicly visible from search engine cached results (the actual page was unreachable/timed out from this browser environment):\n\n**Shop Page Products and Prices (selected from multiple pages):**\n- Blacephalon: Â£149.00\n- Stakataka: Â£190.00\n- Naganadel: Â£30.00\n- Poipole: Â£130.00\n- Marshadow: Â£107.00\n- Bulbasaur: Â£63.00\n- Ivysaur: Â£87.00\n- Venusaur: Â£105.00\n- Charmander: Â£48.00\n- Charmeleon: Â£165.00\n- Pikachu: Â£37.00\n- Mew: Â£136.00\n- Mewtwo: Â£133.00\n- Weedle: Â£133.00\n- Stantler: Â£133.00\n- Spearow: Â£133.00\n- Squirtle: Â£130.00\n- Butterfree: Â£162.00\n- Deerling: Â£141.00\n- Vanilluxe: Â£89.00\n- Vanillish: Â£93.00\n- Vanillite: Â£108.00\n- Swanna: Â£36.00\n- Gurdurr: Â£179.00\n- Timburr: Â£194.00\n- Audino: Â£95.00\n- Excadrill: Â£36.00\n- Drilbur: Â£132.00\n- Lucario: Â£102.00\n- Riolu: Â£70.00\n- Munchlax: Â£190.00\n- Garchomp: Â£62.00\n- Gabite: Â£154.00\n- Trubbish: Â£169.00\n- Archeops: Â£126.00\n- Archen: Â£140.00\n- Carracosta: Â£158.00\n- Tirtouga: Â£60.00\n- Tangrowth: Â£108.00\n- Rhyperior: Â£79.00\n- Lickilicky: Â£101.00\n- Magnezone: Â£190.00\n- Abomasnow: Â£46.00\n- Simipour: Â£61.00\n- Panpour: Â£52.00\n- Simisear: Â£38.00\n- Pansear: Â£194.00\n- Simisage: Â£98.00\n- Sandile: Â£136.00\n- Lilligant: Â£137.00\n- Petilil: Â£118.00\n- Whimsicott: Â£26.00\n- Bunnelby: Â£66.00\n- Greninja: Â£42.00\n- Frogadier: Â£125.00\n- Froakie: Â£38.00\n- Delphox: Â£170.00\n- Comfey: Â£28.00\n- Oranguru: Â£139.00\n- Passimian: Â£182.00\n- Wimpod: Â£137.00\n- Golisopod: Â£32.00\n- Volcarona: Â£94.00\n- Hydreigon: Â£86.00\n- Zweilous: Â£199.00\n- Deino: Â£63.00\n- Durant: Â£28.00\n- Mienshao: Â£50.00\n- Mienfoo: Â£197.00\n- Stunfisk: Â£67.00\n- Accelgor: Â£129.00\n- Shelmet: Â£190.00\n- Emboar: Â£32.00\n- Pignite: Â£149.00\n- Tepig: Â£195.00\n- Serperior: Â£88.00\n- Servine: Â£154.00\n- Seadra: Â£51.00\n- Horsea: Â£154.00\n- Kangaskhan: Â£164.00\n- Tangela: Â£64.00\n- Chansey: Â£176.00\n- Charizard: Â£76.00\n- Blastoise: Â£76.00\n- Pidgeotto: Â£84.00\n- Rufflet: price not specified\n\n**Individual Product Page Details (e.g., Pikachu):**\n- Product Name: Pikachu\n- Price: Â£37.00\n- Description: \"This PokÃ©mon has electricity-storing pouches on its cheeks. These appear to become electrically charged during the night while Pikachu sleeps.\"\n- Stock: \"254 in stock\"\n- Add to basket button present\n- SKU: 1333\n\n**Individual Product Page Details (e.g., Mew):**\n- Product Name: Mew\n- Price: Â£136.00\n- Description: \"Mew is said to possess the genetic composition of all PokÃ©mon. It is capable of making itself invisible at will.\"\n- Stock: \"152 in stock\"\n- Add to basket button present\n- SKU: 4382\n\n**Sorting Options Available:**\n- Default sorting\n- Sort by popularity\n- Sort by latest\n- Sort by price: low to high\n- Sort by price: high to low\n\n**Page Navigation:**\n- The shop spans multiple pages (at least 48+ pages of products)\n\n**Note:** No countdown timers, sale offers, limited-time fees, or scarcity messages (e.g., \"only X left\") were found in the cached content. Products show stock quantities (e.g., \"254 in stock\"). All prices are in GBP (Â£). The site is a WooCommerce store with an \"Add to basket\" button for each product.",
+        "analysis": {
+            "hidden_fees": {
+                "detector": "hidden_fees",
+                "possible_hidden_fees_found": false,
+                "findings": []
+            },
+            "fake_timer": {
+                "detector": "fake_timer",
+                "possible_fake_timer_found": true,
+                "findings": [
+                    "countdown"
+                ]
+            },
+            "false_scarcity": {
+                "detector": "false_scarcity",
+                "possible_false_scarcity_found": false,
+                "findings": []
+            },
+            "summary": {
+                "detectors_triggered": 1,
+                "total_detectors": 3,
+                "risk_score": 33,
+                "risk_level": "Low"
+            }
+        }
+    },
+    {
+        "audit_id": "d4effce6-286d-4663-84ab-7590624545ab",
+        "url": "https://example.com/",
+        "site": "example.com",
+        "status": "completed",
+        "findings": [
+            {
+                "pattern": "hidden_fees",
+                "legal_category": "Drip pricing",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            },
+            {
+                "pattern": "fake_timer",
+                "legal_category": "False urgency",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            },
+            {
+                "pattern": "false_scarcity",
+                "legal_category": "False urgency",
+                "severity": 0,
+                "explanation": "No dark pattern was confirmed.",
+                "evidence_text": "",
+                "detected": false
+            }
+        ],
+        "total_score": 0,
+        "extracted_text": "The page at https://example.com/ is not a product page. It is a documentation example domain. The visible text reads: 'This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.' The page also includes translations of this message in Arabic, Chinese, French, Russian, and Spanish. There are no prices, fees, countdowns, offers, stock, or scarcity messages present on this page.",
+        "analysis": {
+            "hidden_fees": {
+                "detector": "hidden_fees",
+                "possible_hidden_fees_found": false,
+                "findings": []
+            },
+            "fake_timer": {
+                "detector": "fake_timer",
+                "possible_fake_timer_found": false,
+                "findings": []
+            },
+            "false_scarcity": {
+                "detector": "false_scarcity",
+                "possible_false_scarcity_found": false,
+                "findings": []
+            },
+            "summary": {
+                "detectors_triggered": 0,
+                "total_detectors": 3,
+                "risk_score": 0,
+                "risk_level": "No patterns detected"
+            }
+        }
     }
 ]
