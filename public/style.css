@@ -13,3 +13,73 @@
   --low-bg: #e6f4ec;
   font-family: "Public Sans", "Segoe UI", system-ui, sans-serif;
 }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0e1422; --paper: #162036; --ink: #eef1f7; --muted: #a2adc2; --line: #2a3752;
+    --blue: #7ea2ff; --high: #ff9a92; --high-bg: #3a1c1f; --medium: #ffc470; --medium-bg: #3a2c14;
+    --low: #7fd6a2; --low-bg: #16301f;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); line-height: 1.55; }
+.top, main, footer { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.top { padding-top: 48px; }
+.top h1 { font-size: 2rem; margin: 0 0 8px; letter-spacing: -0.02em; }
+.top p { margin: 0; color: var(--muted); max-width: 60ch; }
+
+.search { margin-top: 28px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
+.search label { display: block; font-weight: 600; margin-bottom: 8px; }
+.row { display: flex; gap: 10px; }
+input[type="url"] {
+  flex: 1; min-width: 0; padding: 12px 14px; font: inherit; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--line); border-radius: 8px;
+}
+button { font: inherit; cursor: pointer; }
+#check-btn {
+  padding: 12px 20px; border: 0; border-radius: 8px; font-weight: 600;
+  background: var(--blue); color: #fff;
+}
+@media (prefers-color-scheme: dark) { #check-btn { color: #0e1422; } }
+#check-btn:disabled { opacity: .6; cursor: wait; }
+.link-btn { margin-top: 12px; background: none; border: 0; color: var(--blue); padding: 0; text-decoration: underline; }
+input:focus-visible, button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.status { margin-top: 20px; padding: 16px 18px; border-radius: 10px; background: var(--paper); border: 1px solid var(--line); }
+.status.error { border-color: var(--high); background: var(--high-bg); color: var(--high); }
+.spinner {
+  display: inline-block; width: 14px; height: 14px; margin-right: 10px; vertical-align: -2px;
+  border: 2px solid var(--line); border-top-color: var(--blue); border-radius: 50%;
+  animation: spin .8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation: none; } }
+
+.report { margin-top: 28px; }
+.summary { display: flex; gap: 20px; align-items: center; padding: 20px; border-radius: 10px; border: 1px solid var(--line); background: var(--paper); }
+.score { flex: none; width: 92px; height: 92px; border-radius: 50%; display: grid; place-items: center; font-size: 1.9rem; font-weight: 700; border: 6px solid currentColor; }
+.score.high { color: var(--high); } .score.medium { color: var(--medium); } .score.low { color: var(--low); }
+.summary h3 { margin: 0 0 4px; font-size: 1.15rem; }
+.summary p { margin: 0; color: var(--muted); overflow-wrap: anywhere; }
+.report h2 { font-size: 1.1rem; margin: 28px 0 12px; }
+
+.findings { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.finding { background: var(--paper); border: 1px solid var(--line); border-left-width: 6px; border-radius: 10px; padding: 16px 18px; }
+.finding.high { border-left-color: var(--high); } .finding.medium { border-left-color: var(--medium); } .finding.low { border-left-color: var(--low); }
+.finding header { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.finding h3 { margin: 0; font-size: 1.05rem; }
+.badge { font-size: .8rem; font-weight: 600; padding: 2px 10px; border-radius: 99px; }
+.badge.high { background: var(--high-bg); color: var(--high); }
+.badge.medium { background: var(--medium-bg); color: var(--medium); }
+.badge.low { background: var(--low-bg); color: var(--low); }
+.finding dl { margin: 10px 0 0; display: grid; grid-template-columns: 110px 1fr; gap: 6px 12px; }
+.finding dt { color: var(--muted); }
+.finding dd { margin: 0; overflow-wrap: anywhere; }
+.clean { padding: 18px; border-radius: 10px; background: var(--low-bg); color: var(--low); font-weight: 600; }
+
+footer { padding-top: 32px; padding-bottom: 40px; color: var(--muted); font-size: .9rem; }
+@media (max-width: 520px) {
+  .row { flex-direction: column; }
+  .summary { flex-direction: column; text-align: center; }
+  .finding dl { grid-template-columns: 1fr; }
+}
+ 
