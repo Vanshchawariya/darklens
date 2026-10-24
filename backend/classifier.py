@@ -1,6 +1,5 @@
 
-# Dark Pattern Detector
-# Step 1: Map detected patterns to their categories and base scores
+#Map detected patterns to their categories and base scores
 
 PATTERN_RULES = {
     "fake_timer": {
@@ -15,7 +14,7 @@ PATTERN_RULES = {
         "legal_category": "False urgency",
         "base_score": 5
     }
-}
+} 
 
 def classify_pattern(pattern):
     if pattern in PATTERN_RULES:
