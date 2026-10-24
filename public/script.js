@@ -1,4 +1,3 @@
-
 // Get references to the audit form elements
 const form = document.getElementById("audit-form");
 const urlInput = document.getElementById("url");
@@ -12,10 +11,34 @@ const reportBox = document.getElementById("report");
 const summaryBox = document.getElementById("summary");
 const findingsList = document.getElementById("findings");
 
+// Complaint section
+const complaintBox = document.getElementById("complaint");
+const complaintBtn = document.getElementById("complaint-btn");
+const complaintPanel = document.getElementById("complaint-box");
+const complaintText = document.getElementById("complaint-text");
+const complaintNote = document.getElementById("complaint-note");
+const copyBtn = document.getElementById("copy-btn");
+const waLink = document.getElementById("wa-link");
+
+// Stop early with a clear message if index.html is missing something this file needs
+const REQUIRED_IDS = [
+  "audit-form", "url", "check-btn", "demo-btn", "status", "report", "summary", "findings",
+  "complaint", "complaint-btn", "complaint-box", "complaint-text", "complaint-note", "copy-btn", "wa-link",
+];
+const missingIds = REQUIRED_IDS.filter((id) => !document.getElementById(id));
+if (missingIds.length) {
+  const message = "script.js: index.html is missing element id(s): " + missingIds.join(", ");
+  console.error(message);
+  throw new Error(message);
+}
+
 // Your backend endpoint. It receives { url } and returns { findings: [...] }.
 // Keep the TinyFish API key on the server, never in this file.
 const API_ENDPOINT = "/api/audit";
 const TIMEOUT_MS = 120000; // web-agent audits can take a while
+
+// National Consumer Helpline WhatsApp number (country code + number, no + or spaces)
+const NCH_WHATSAPP = "918800001915";
 
 // Link each pattern to the rule it breaks
 const RULES = {
@@ -30,6 +53,9 @@ const RULES = {
 const WEIGHT = { high: 30, medium: 18, low: 8 };
 
 const LABEL = { high: "High risk", medium: "Medium risk", low: "Low risk" };
+
+// The report currently on screen (used to build the complaint)
+let current = null;
 
 function esc(text) {            // stops page content from being run as HTML
   const d = document.createElement("div");
@@ -116,7 +142,7 @@ function renderFinding(f) {
     </li>`;
 }
 
-function renderReport(url, findings) {
+function renderReport(url, findings, isSample = false) {
   const order = { high: 0, medium: 1, low: 2 };
   const sorted = [...findings].sort(
     (a, b) => order[level(a.severity)] - order[level(b.severity)]
@@ -143,10 +169,75 @@ function renderReport(url, findings) {
     findingsList.innerHTML = sorted.map(renderFinding).join("");
   }
 
+  // Complaint section: only when something was found; always start closed
+  current = { url, findings: sorted, isSample };
+  complaintPanel.hidden = true;
+  complaintText.value = "";
+  complaintBox.hidden = count === 0;
+
   hideStatus();
   reportBox.hidden = false;
   reportBox.scrollIntoView({ behavior: "smooth", block: "start" });
 }
+
+// ---------- complaint to the National Consumer Helpline ----------
+
+function buildComplaint({ url, findings, isSample }) {
+  const host = new URL(url).hostname.replace(/^www\./, "");
+  const date = new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" });
+
+  const items = findings
+    .map((f, i) => {
+      const lines = [`${i + 1}. ${f.type || "Suspicious element"} (${LABEL[level(f.severity)]})`];
+      if (f.evidence) lines.push(`   Evidence: ${f.evidence}`);
+      if (f.location) lines.push(`   Where: ${f.location}`);
+      const rule = ruleFor(f);
+      if (rule) lines.push(`   Guideline: ${rule}`);
+      return lines.join("\n");
+    })
+    .join("\n\n");
+
+  return [
+    isSample ? "[SAMPLE DATA - THIS IS NOT A REAL SITE. DO NOT SUBMIT.]\n" : "",
+    "To,\nThe National Consumer Helpline\nDepartment of Consumer Affairs, Government of India\n",
+    `Subject: Possible dark patterns on ${host}\n`,
+    `I would like to report possible dark patterns on ${url}. They were noted on ${date} using the DarkLens audit tool. They appear to fall under the Guidelines for Prevention and Regulation of Dark Patterns, 2023.\n`,
+    "What was found:\n" + items + "\n",
+    `Website: ${host}`,
+    "Order ID (if any): [add here]",
+    "My name and contact details: [add here]\n",
+    "Please examine this and ask the platform to respond.\n",
+    "Note: this is an automated test result and an indication, not a legal finding.",
+  ].join("\n");
+}
+
+function updateWhatsAppLink() {
+  waLink.href = `https://wa.me/${NCH_WHATSAPP}?text=${encodeURIComponent(complaintText.value)}`;
+}
+
+complaintBtn.addEventListener("click", () => {
+  if (!current) return;
+  complaintText.value = buildComplaint(current);
+  complaintNote.textContent = current.isSample
+    ? "This is sample data, so the draft is marked do not submit."
+    : "Add your name, order details and your own screenshots before you send it. DarkLens does not send anything for you.";
+  updateWhatsAppLink();
+  complaintPanel.hidden = false;
+  complaintText.focus();
+});
+
+complaintText.addEventListener("input", updateWhatsAppLink);
+
+copyBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(complaintText.value);
+  } catch {
+    complaintText.select();
+    document.execCommand("copy");
+  }
+  copyBtn.textContent = "Copied";
+  setTimeout(() => (copyBtn.textContent = "Copy text"), 2000);
+});
 
 // ---------- talking to the backend ----------
 
@@ -249,5 +340,5 @@ const SAMPLE_FINDINGS = [
 
 demoBtn.addEventListener("click", () => {
   urlInput.value = SAMPLE_URL;
-  renderReport(SAMPLE_URL, SAMPLE_FINDINGS);
+  renderReport(SAMPLE_URL, SAMPLE_FINDINGS, true);
 });
