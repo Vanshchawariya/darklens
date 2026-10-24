@@ -10,6 +10,7 @@ const statusBox = document.getElementById("status");
 const reportBox = document.getElementById("report");
 const summaryBox = document.getElementById("summary");
 const findingsList = document.getElementById("findings");
+
 // Link each pattern to the rule it breaks
 const RULES = {
   "fake timer": "False urgency (CCPA 2023 dark pattern guidelines)",
