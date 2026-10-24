@@ -49,6 +49,24 @@
       <div class="summary" id="summary"></div>
       <h2>What we found</h2>
       <ul id="findings" class="findings"></ul>
+
+      <section id="complaint" class="complaint" hidden aria-labelledby="complaint-title">
+        <h2 id="complaint-title">Report to the National Consumer Helpline</h2>
+        <p class="lead">Found something worth reporting? We can draft the complaint text for you. You review it and submit it yourself.</p>
+        <button type="button" id="complaint-btn">Draft my complaint</button>
+
+        <div id="complaint-box" hidden>
+          <label for="complaint-text">Your complaint draft (edit it before sending)</label>
+          <textarea id="complaint-text" rows="14"></textarea>
+          <div class="actions">
+            <button type="button" id="copy-btn" class="btn-secondary">Copy text</button>
+            <a class="btn-secondary" href="https://consumerhelpline.gov.in" target="_blank" rel="noopener noreferrer">Open consumerhelpline.gov.in</a>
+            <a class="btn-secondary" id="wa-link" href="https://wa.me/918800001915" target="_blank" rel="noopener noreferrer">Send on WhatsApp</a>
+          </div>
+          <p class="hint" id="complaint-note"></p>
+          <p class="hint">You can also call the helpline on 1915 or 1800-11-4000. DarkLens is not part of the Government of India and does not send complaints for you.</p>
+        </div>
+      </section>
     </section>
 
     <section class="tests" aria-labelledby="tests-title">
@@ -72,9 +90,8 @@
 
   <footer>
     <p>Read-only audit. No purchase is made and no login is used.</p>
-    <p>Findings refer to the CCPA Dark Patterns Guidelines, 2023.</p>
+    <p>Findings refer to the CCPA Dark Patterns Guidelines, 2023. They are test results, not legal findings.</p>
   </footer>
   <script src="script.js"></script>
 </body>
 </html>
-
