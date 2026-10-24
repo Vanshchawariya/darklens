@@ -6,7 +6,8 @@ from pathlib import Path
 import json
 import uuid
 
-from backend.classifier import classify_finding
+
+from backend.classifier import classify_finding, rank_websites
 
 app = FastAPI(title="DarkLens API")
 
@@ -74,15 +75,12 @@ def audit_website(request: AuditRequest):
     return audit
 
 
-@app.get("/report/{audit_id}")
-def get_report(audit_id: str):
+
+@app.get("/leaderboard")
+def get_leaderboard():
     audits = load_audits()
+    ranking = rank_websites(audits)
 
-    for audit in audits:
-        if audit["audit_id"] == audit_id:
-            return audit
-
-    raise HTTPException(
-        status_code=404,
-        detail="Audit report not found"
-    )
+    return {
+        "leaderboard": ranking
+    }
