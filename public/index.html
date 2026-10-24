@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dark Pattern Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Dark Lens</h1>
+    <p>Paste a shopping link. We check it for fake timers, false scarcity, hidden fees and other tricks that push buyers to spend.</p>
+  </header>
+
+  <main>
+    <form id="audit-form" class="search" autocomplete="off">
+      <label for="url">Product or checkout link</label>
+      <div class="row">
+        <input id="url" type="url" placeholder="https://www.example.com/product/123" required>
+        <button type="submit" id="check-btn">Check this page</button>
+      </div>
+      <button type="button" id="demo-btn" class="link-btn">Load sample report</button>
+    </form>
+
+    <section id="status" class="status" hidden aria-live="polite"></section>
+
+    <section id="report" class="report" hidden>
+      <div class="summary" id="summary"></div>
+      <h2>What we found</h2>
+      <ul id="findings" class="findings"></ul>
+    </section>
+  </main>
+
+  <footer>Read-only audit. No purchase is made and no login is used.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+
