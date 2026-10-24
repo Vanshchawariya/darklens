@@ -1,0 +1,15 @@
+:root {
+  --bg: #f2f4f7;
+  --paper: #ffffff;
+  --ink: #14213d;
+  --muted: #5b6577;
+  --line: #d9dee7;
+  --blue: #1d4ed8;
+  --high: #b3261e;
+  --high-bg: #fdecea;
+  --medium: #a15c00;
+  --medium-bg: #fff3df;
+  --low: #1f6f43;
+  --low-bg: #e6f4ec;
+  font-family: "Public Sans", "Segoe UI", system-ui, sans-serif;
+}
