@@ -1,0 +1,27 @@
+{
+  "url": "https://www.google.com",
+  "extracted_text": "Navigation: About, Store, Gmail, Images, Google apps, Sign in. Search area: Add files and tools, Search, Search by voice, Search by image, AI Mode, Create images, Ask about files, Brainstorm, I'm Feeling Lucky. Promotional banner: It's Drug Take Back Day: Find locations to safely dispose of unneeded medication. Footer: Advertising, Business, How Search works, Build, create, and do more with AI tools from Google, Privacy, Terms, Settings.",
+  "analysis": {
+    "hidden_fees": {
+      "detector": "hidden_fees",
+      "possible_hidden_fees_found": false,
+      "findings": []
+    },
+    "fake_timer": {
+      "detector": "fake_timer",
+      "possible_fake_timer_found": false,
+      "findings": []
+    },
+    "false_scarcity": {
+      "detector": "false_scarcity",
+      "possible_false_scarcity_found": false,
+      "findings": []
+    },
+    "summary": {
+      "detectors_triggered": 0,
+      "total_detectors": 3,
+      "risk_score": 0,
+      "risk_level": "No patterns detected"
+    }
+  }
+}

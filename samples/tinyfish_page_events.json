@@ -1,0 +1,48 @@
+[
+  {
+    "type": "STARTED",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "timestamp": "2026-10-24T20:22:12.308Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T20:22:27.309Z"
+  },
+  {
+    "type": "STREAMING_URL",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "streaming_url": "https://ip-54-177-234-113.tetra-data.production.tinyfish.io/tf-85bdc754-e188-48f6-9cd6-3eb044480b52/stream/0",
+    "timestamp": "2026-10-24T20:22:28.569Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "purpose": "Navigate to Google homepage to extract product page text",
+    "timestamp": "2026-10-24T20:22:30.472Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "purpose": "Extract all visible text from Google homepage",
+    "timestamp": "2026-10-24T20:22:34.108Z"
+  },
+  {
+    "type": "PROGRESS",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "purpose": "Return extracted page text from Google homepage",
+    "timestamp": "2026-10-24T20:22:39.837Z"
+  },
+  {
+    "type": "HEARTBEAT",
+    "timestamp": "2026-10-24T20:22:54.838Z"
+  },
+  {
+    "type": "COMPLETE",
+    "run_id": "96d1fcfc-2527-444d-ae8d-8ec381d5aa7c",
+    "status": "COMPLETED",
+    "timestamp": "2026-10-24T20:23:01.231Z",
+    "result": {
+      "page_text": "Navigation: About, Store, Gmail, Images, Google apps, Sign in. Search area: Add files and tools, Search, Search by voice, Search by image, AI Mode, Create images, Ask about files, Brainstorm, I'm Feeling Lucky. Promotional banner: It's Drug Take Back Day: Find locations to safely dispose of unneeded medication. Footer: Advertising, Business, How Search works, Build, create, and do more with AI tools from Google, Privacy, Terms, Settings."
+    }
+  }
+]
