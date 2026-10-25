@@ -1,9 +1,10 @@
-
 # Environment variables and secrets
 .env
 .env.*
+!.env.example
 **/.env
 **/.env.*
+!**/.env.example
 
 # Python virtual environments
 .venv/
@@ -17,6 +18,9 @@ __pycache__/
 
 # Test caches
 .pytest_cache/
+
+# Node (in case anyone uses npm tools)
+node_modules/
 
 # IDE and operating system files
 .vscode/
