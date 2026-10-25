@@ -4,6 +4,7 @@ import os
 import uuid
 from pathlib import Path
 from typing import List
+from tinyfish import TinyFish
 
 import requests
 from dotenv import load_dotenv
@@ -164,6 +165,7 @@ def extract_page_text(result):
     return ""
 
 
+
 def get_tinyfish_page_text(page_url):
     if not API_KEY:
         raise HTTPException(
@@ -172,7 +174,7 @@ def get_tinyfish_page_text(page_url):
         )
 
     goal = """
-    Read the publicly visible product page only.
+    Read the publicly visible webpage only.
     Do not log in, submit forms, purchase products, or enter payment details.
 
     Return a JSON object with a page_text field containing relevant
@@ -181,75 +183,24 @@ def get_tinyfish_page_text(page_url):
     Do not invent missing information.
     """
 
-    final_result = None
-
     try:
-        with requests.post(
-            API_URL,
-            headers={
-                "X-API-Key": API_KEY,
-                "Content-Type": "application/json",
-            },
-            json={
-                "url": page_url,
-                "goal": goal,
-            },
-            stream=True,
-            timeout=(20, 300),
-        ) as response:
-            response.raise_for_status()
+        client = TinyFish(api_key=API_KEY)
 
-            for line in response.iter_lines(decode_unicode=True):
-                if not line or not line.startswith("data:"):
-                    continue
-
-                data = line[len("data:"):].strip()
-
-                try:
-                    event = json.loads(data)
-                except json.JSONDecodeError:
-                    continue
-
-                event_type = event.get("type")
-
-                # TinyFish may provide the result before COMPLETE.
-                if event_type in ("TF_API_RESULT", "COMPLETE"):
-                    if event.get("error"):
-                        raise HTTPException(
-                            status_code=502,
-                            detail="TinyFish reported an analysis error.",
-                        )
-
-                    result = event.get("result")
-
-                    if result is not None:
-                        final_result = result
-
-                    status = event.get("status")
-
-                    if status not in (
-                        None,
-                        "COMPLETED",
-                        "SUCCESS",
-                    ):
-                        raise HTTPException(
-                            status_code=502,
-                            detail=f"TinyFish status: {status}",
-                        )
-
-    except requests.RequestException:
-        raise HTTPException(
-            status_code=502,
-            detail="Could not complete the TinyFish request.",
+        response = client.agent.run(
+            url=page_url,
+            goal=goal,
         )
 
-    if final_result is None:
+        result = response.result
+
+    except Exception as exc:
+        print("TinyFish SDK error:", str(exc), flush=True)
         raise HTTPException(
             status_code=502,
-            detail="TinyFish did not return a final result.",
-        )
+            detail="TinyFish could not complete the page analysis. Check the backend terminal.",
+        ) from exc
 
-    page_text = extract_page_text(final_result)
+    page_text = extract_page_text(result)
 
     if not page_text.strip():
         raise HTTPException(
@@ -273,7 +224,6 @@ def get_tinyfish_page_text(page_url):
         )
 
     return page_text
-
 
 # --------------------------------------------------
 # Convert detector results to classifier findings

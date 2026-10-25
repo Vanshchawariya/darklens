@@ -1,8 +1,8 @@
 {
-  "audit_id": "d4effce6-286d-4663-84ab-7590624545ab",
-  "url": "https://example.com/",
-  "site": "example.com",
-  "extracted_text": "The page at https://example.com/ is not a product page. It is a documentation example domain. The visible text reads: 'This domain is for use in documentation examples without needing permission. This is not a service; avoid relying on it for testing and monitoring purposes.' The page also includes translations of this message in Arabic, Chinese, French, Russian, and Spanish. There are no prices, fees, countdowns, offers, stock, or scarcity messages present on this page.",
+  "audit_id": "31da7999-768c-4d7c-b537-5d39dd1e5db6",
+  "url": "https://www.amazon.in/Lux-Cozi-Cotton-Boxers-8904209873170_COZI_Bigshot_SLP_DRW_90_Assorted/dp/B071GYQ6SY/ref=sr_1_7?sr=8-7",
+  "site": "www.amazon.in",
+  "extracted_text": "Product Title: Lux Cozi Mens 100% Cotton Solid Mini Trunk | Mini Trunk Underwear for Men | Color and Print May Vary | Pack of 3\n\nRating: 3.8 out of 5 stars (7,872 ratings)\n\nPrices:\n- Selected size L: ₹338.00 with 22 percent savings\n- MRP: ₹432.00\n- Price per count: ₹112.67 / count\n- All prices are Inclusive of all taxes\n\nAll Size-to-Price Mappings:\n- XS: ₹329.00 with 23 percent savings (MRP: ₹429.00), ₹109.67 per count\n- S: ₹339.00 with 33 percent savings (MRP: ₹507.00), ₹113.00 per count\n- M: ₹338.00 with 22 percent savings (MRP: ₹432.00), ₹112.67 per count\n- L: ₹338.00 with 22 percent savings (MRP: ₹432.00), ₹112.67 per count\n- XL: ₹368.00 with 24 percent savings (MRP: ₹486.00), ₹122.67 per count\n- 2XL: ₹368.00 with 34 percent savings (MRP: ₹561.00), ₹122.67 per count\n\nOffers:\n1. Cashback: Upto ₹10.00 cashback as Amazon Pay Balance when you pay with Amazon Pay ICICI Bank Credit Cards\n2. Bank Offer: Upto ₹1,000.00 discount on select Credit Cards\n3. Partner Offers: Get GST invoice and save up to 18% on business purchases. Sign up for free\n\nStock & Scarcity:\n- In stock\n- Only 1 left in stock.\n\nDelivery:\n- Free Delivery\n- Arrives 14 days before Diwali\n- Get it by Tuesday, October 27\n- Order within 2 hrs 53 mins.\n- FREE delivery Tuesday, 27 October\n- Limited Period Festive Offer. Details\n- Free Delivery by Amazon\n\nDelivery Location: Delivering to Mumbai 400001\n\nGST/Tax:\n- Inclusive of all taxes\n- Get GST invoice and save up to 18% on business purchases\n\nReturn Policy:\n- Non-Returnable\n- This item is non-returnable due to the nature of the product.\n- For a Damaged, Defective, Wrong or expired item, you can request a refund or replacement within 5 days of delivery\n- You will need to share the image of the item and its defects through Your Orders for a refund/replacement.\n\nAdditional Info:\n- Top Brand\n- Amazon Delivered\n- Non-Returnable\n- Pay on Delivery\n- Great Indian Festival\n- Limited Period Festive Offer",
   "analysis": {
     "hidden_fees": {
       "detector": "hidden_fees",
@@ -16,14 +16,16 @@
     },
     "false_scarcity": {
       "detector": "false_scarcity",
-      "possible_false_scarcity_found": false,
-      "findings": []
+      "possible_false_scarcity_found": true,
+      "findings": [
+        "only 1 left"
+      ]
     },
     "summary": {
-      "detectors_triggered": 0,
+      "detectors_triggered": 1,
       "total_detectors": 3,
-      "risk_score": 0,
-      "risk_level": "No patterns detected"
+      "risk_score": 33,
+      "risk_level": "Low"
     }
   },
   "findings": [
@@ -46,12 +48,12 @@
     {
       "pattern": "false_scarcity",
       "legal_category": "False urgency",
-      "severity": 0,
-      "explanation": "No dark pattern was confirmed.",
-      "evidence_text": "",
-      "detected": false
+      "severity": 5,
+      "explanation": "The stock or demand message may pressure users into making a quick decision.",
+      "evidence_text": "only 1 left",
+      "detected": true
     }
   ],
-  "total_score": 0,
+  "total_score": 5,
   "status": "completed"
 }

@@ -34,7 +34,7 @@ if (missingIds.length) {
 
 // Your backend endpoint. It receives { url } and returns { findings: [...] }.
 // Keep the TinyFish API key on the server, never in this file.
-const API_ENDPOINT = "/api/audit";
+const API_ENDPOINT = "http://127.0.0.1:8000/analyze";
 const TIMEOUT_MS = 120000; // web-agent audits can take a while
 
 // National Consumer Helpline WhatsApp number (country code + number, no + or spaces)
@@ -241,31 +241,57 @@ copyBtn.addEventListener("click", async () => {
 
 // ---------- talking to the backend ----------
 
-async function runAudit(url) {
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
-  try {
-    const res = await fetch(API_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ url }),
-      signal: controller.signal,
-    });
-    if (!res.ok) throw new Error(`The audit service returned an error (${res.status}).`);
-    const data = await res.json();
-    return Array.isArray(data.findings) ? data.findings : [];
-  } catch (err) {
-    if (err.name === "AbortError") {
-      throw new Error("The audit took too long. The site may be slow or blocking automated visits.");
+async function runAudit(url) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+    try {
+        const res = await fetch(API_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ url }),
+            signal: controller.signal
+        });
+
+        if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            throw new Error(
+                errorData.detail || `The audit service returned an error (${res.status}).`
+            );
+        }
+
+        const data = await res.json();
+
+        if (!Array.isArray(data.findings)) {
+            throw new Error("The backend response did not contain a findings list.");
+        }
+
+        return data.findings
+            .filter((finding) => finding.detected)
+            .map((finding) => ({
+                type: String(finding.pattern || "Suspicious element")
+                    .replaceAll("_", " ")
+                    .replace(/\b\w/g, (char) => char.toUpperCase()),
+                severity:
+                    finding.severity >= 7 ? "high" :
+                    finding.severity >= 4 ? "medium" : "low",
+                evidence: finding.evidence_text || "",
+                location: "",
+                rule: finding.legal_category || "",
+                advice: finding.explanation || ""
+            }));
+    } catch (err) {
+        if (err.name === "AbortError") {
+            throw new Error("The audit took too long. The site may be slow or blocking automated visits.");
+        }
+        if (err instanceof TypeError) {
+            throw new Error("Could not reach the audit service. Is the backend running?");
+        }
+        throw err;
+    } finally {
+        clearTimeout(timer);
     }
-    if (err instanceof TypeError) {
-      throw new Error("Could not reach the audit service. Is the backend running?");
-    }
-    throw err;
-  } finally {
-    clearTimeout(timer);
-  }
 }
 
 // Add https:// if missing and check the link is valid
